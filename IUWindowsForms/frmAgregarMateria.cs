@@ -36,7 +36,7 @@ namespace IUWindowsForms
             if (x > 0)
                 MessageBox.Show("Se agrego correctamente...");
             else
-                MessageBox.Show("No se pudo agregar el registro...");
+                MessageBox.Show("No se pudo agregar el registro..");
         }
     }
 }

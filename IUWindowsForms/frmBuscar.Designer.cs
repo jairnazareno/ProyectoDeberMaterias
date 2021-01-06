@@ -41,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCarrera = new System.Windows.Forms.ComboBox();
             this.cmbCodigo = new System.Windows.Forms.ComboBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEliminar
@@ -182,11 +183,22 @@
             this.cmbCodigo.Size = new System.Drawing.Size(121, 21);
             this.cmbCodigo.TabIndex = 53;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(354, 327);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.TabIndex = 54;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // frmBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 415);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.cmbCodigo);
             this.Controls.Add(this.cmbCarrera);
             this.Controls.Add(this.btnEliminar);
@@ -202,6 +214,7 @@
             this.Controls.Add(this.label2);
             this.Name = "frmBuscar";
             this.Text = "frmBuscar";
+            this.Load += new System.EventHandler(this.frmBuscar_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +235,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbCarrera;
         private System.Windows.Forms.ComboBox cmbCodigo;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

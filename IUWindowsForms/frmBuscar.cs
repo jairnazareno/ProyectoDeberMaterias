@@ -16,14 +16,11 @@ namespace IUWindowsForms
         {
             InitializeComponent();
         }
-        private void frmBuscar_Load(object sender, EventArgs e)
-        {
-            this.cargarComboEstudiantes();
-        }
+       
         private void cargarComboEstudiantes()
         {
             this.cmbCodigo.DataSource = ProyectoMaterias.MateriasDAO.getAll();
-            this.cmbCodigo.DisplayMember = "Materia";
+            this.cmbCodigo.DisplayMember = "estudiantes";
             this.cmbCodigo.ValueMember = "codMaterias";
         }
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -80,8 +77,11 @@ namespace IUWindowsForms
             {
                 this.encerar();
                 this.cargarComboEstudiantes();
-                MessageBox.Show("¡No se pudo borrar el registro!");
+                MessageBox.Show("Registro eliminado con exito");
             }
+            else
+                MessageBox.Show("No se pudo borrar el registro eliminado con exito");
+
         }
         private void encerar()
         {
@@ -90,7 +90,16 @@ namespace IUWindowsForms
             this.cmbNivel.Text = "0";
             this.cmbCarrera.Text = "";
            
+        }
 
+        private void frmBuscar_Load_1(object sender, EventArgs e)
+        {
+            this.cargarComboEstudiantes();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

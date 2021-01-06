@@ -43,7 +43,7 @@ namespace ProyectoMaterias
 
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
-            string sql = "update Personas set  nombreMateria=@nombreMateria, nivel=@nivel, @carrera=@carrera "
+            string sql = "update Estudiantes set  nombreMateria=@nombreMateria, nivel=@nivel, @carrera=@carrera "
                 + " where codMaterias=@codMaterias";
 
 
@@ -93,10 +93,9 @@ namespace ProyectoMaterias
         public static DataTable getAll()
         {
             
-
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
-            string sql = "select codMaterias, nombreMateria, nivel, carrera " + "from Estudiantes order by carrera";
+            string sql = "select codMaterias, upper(nombreMateria), nivel, carrera " + "from Estudiantes order by carrera";
             
             SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
 

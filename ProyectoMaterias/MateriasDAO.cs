@@ -14,7 +14,7 @@ namespace ProyectoMaterias
         public static string cadenaConexion = @"Server=DESKTOP-BVI966H\SQLEXPRESS; database=Materias; integrated security=true";
         public static int crear(Materias mate)
         {
-            string cadenaConexion = @"Server=DESKTOP-BVI966H\SQLEXPRESS; database=Materias; integrated security=true";
+            //string cadenaConexion = @"Server=DESKTOP-BVI966H\SQLEXPRESS; database=Materias; integrated security=true";
 
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
@@ -70,7 +70,7 @@ namespace ProyectoMaterias
 
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
-            string sql = "delete from Personas " +
+            string sql = "delete from Estudiantes " +
                 "where codMaterias=@codMaterias ";
 
 
@@ -96,7 +96,8 @@ namespace ProyectoMaterias
 
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
-            string sql = "select codMaterias, nombreMateria, nivel, carrera" + " from Estudiantes";
+            string sql = "select codMaterias, nombreMateria, nivel, carrera " + "from Estudiantes order by carrera";
+            
             SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
 
             DataTable dt = new DataTable();
@@ -108,12 +109,11 @@ namespace ProyectoMaterias
 
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
-            string sql = "select codMaterias, nombreMateria, nivel, carrera " + " from Personas "
+            string sql = "select codMaterias, nombreMateria, nivel, carrera " + "from Estudiantes "
                + "where codMaterias=@codMaterias";
             SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
 
             ad.SelectCommand.Parameters.AddWithValue("@codMaterias", codMaterias);
-
 
 
             DataTable dt = new DataTable();

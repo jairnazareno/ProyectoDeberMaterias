@@ -39,8 +39,8 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbCodigo = new System.Windows.Forms.ComboBox();
             this.cmbCarrera = new System.Windows.Forms.ComboBox();
+            this.cmbCodigo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnEliminar
@@ -51,6 +51,7 @@
             this.btnEliminar.TabIndex = 51;
             this.btnEliminar.Text = "eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnActualizar
             // 
@@ -76,7 +77,7 @@
             "8"});
             this.cmbNivel.Location = new System.Drawing.Point(183, 209);
             this.cmbNivel.Name = "cmbNivel";
-            this.cmbNivel.Size = new System.Drawing.Size(91, 21);
+            this.cmbNivel.Size = new System.Drawing.Size(60, 21);
             this.cmbNivel.TabIndex = 46;
             // 
             // label7
@@ -111,7 +112,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 58);
+            this.label1.Location = new System.Drawing.Point(68, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
@@ -156,16 +157,6 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "CODIGO DE LA MATERIA";
             // 
-            // cmbCodigo
-            // 
-            this.cmbCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cmbCodigo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbCodigo.FormattingEnabled = true;
-            this.cmbCodigo.Location = new System.Drawing.Point(181, 55);
-            this.cmbCodigo.Name = "cmbCodigo";
-            this.cmbCodigo.Size = new System.Drawing.Size(121, 21);
-            this.cmbCodigo.TabIndex = 31;
-            // 
             // cmbCarrera
             // 
             this.cmbCarrera.FormattingEnabled = true;
@@ -182,11 +173,21 @@
             this.cmbCarrera.Size = new System.Drawing.Size(262, 21);
             this.cmbCarrera.TabIndex = 52;
             // 
+            // cmbCodigo
+            // 
+            this.cmbCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cmbCodigo.FormattingEnabled = true;
+            this.cmbCodigo.Location = new System.Drawing.Point(192, 55);
+            this.cmbCodigo.Name = "cmbCodigo";
+            this.cmbCodigo.Size = new System.Drawing.Size(121, 21);
+            this.cmbCodigo.TabIndex = 53;
+            // 
             // frmBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 415);
+            this.Controls.Add(this.cmbCodigo);
             this.Controls.Add(this.cmbCarrera);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnActualizar);
@@ -199,7 +200,6 @@
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.cmbCodigo);
             this.Name = "frmBuscar";
             this.Text = "frmBuscar";
             this.ResumeLayout(false);
@@ -220,7 +220,7 @@
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbCodigo;
         private System.Windows.Forms.ComboBox cmbCarrera;
+        private System.Windows.Forms.ComboBox cmbCodigo;
     }
 }

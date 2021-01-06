@@ -16,16 +16,19 @@ namespace IUWindowsForms
         {
             InitializeComponent();
         }
-
+        private void frmBuscar_Load(object sender, EventArgs e)
+        {
+            this.cargarComboEstudiantes();
+        }
         private void cargarComboEstudiantes()
         {
             this.cmbCodigo.DataSource = ProyectoMaterias.MateriasDAO.getAll();
-            this.cmbCodigo.DisplayMember = "codMaterias";
-            this.cmbCodigo.ValueMember = "nombreMateria";
+            this.cmbCodigo.DisplayMember = "Materia";
+            this.cmbCodigo.ValueMember = "codMaterias";
         }
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string codMaterias = this.cmbCodigo.SelectedValue.ToString();
+            String codMaterias = this.cmbCodigo.Text;
 
             ProyectoMaterias.Materias p = new ProyectoMaterias.Materias();
             p = ProyectoMaterias.MateriasDAO.GetPersona(codMaterias);
@@ -39,34 +42,55 @@ namespace IUWindowsForms
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            /*
-            if (this.txtCodigo.Text.Length == 0)
-            {
-                MessageBox.Show("No hay cedula seleccionada");
-                return;
-            }
-            ProyectoMaterias.Materias persona = new CapaDatos.Persona();
-            persona.Cedula = this.txtCedula.Text;
-            persona.Apellidos = this.txtApellidos.Text;
-            persona.Nombres = this.txtNombres.Text;
-            persona.Sexo = this.cmbSexo.Text;
-            persona.Correo = this.txtCorreo.Text;
-            persona.Estatura = int.Parse(this.txtEstatura.Text);
-            persona.Peso = decimal.Parse(this.txtPeso.Text);
-            persona.FechaNacimiento = dtFechaNacimiento.Value;
+            
+              if (this.txtCodigo.Text.Length == 0)
+              {
+                  MessageBox.Show("No hay cedula seleccionada");
+                  return;
+              }
+              ProyectoMaterias.Materias persona = new ProyectoMaterias.Materias();
+              persona.codMaterias = this.txtCodigo.Text;
+              persona.nombreMateria = this.txtNombre.Text;
+              persona.nivel = int.Parse(this.cmbNivel.Text);
+              persona.carrera = this.cmbCarrera.Text;
 
 
-            int x = CapaDatos.PersonaDAO.actualizar(persona);
+            int x = ProyectoMaterias.MateriasDAO.actualizar(persona);
 
-            if (x > 0)
-            {
-                this.cargarComboEstudiantes();
-                MessageBox.Show("Registro Aactualizar con exito!");
-            }
+              if (x > 0)
+              {
+                  this.cargarComboEstudiantes();
+                  MessageBox.Show("Registro Aactualizar con exito!");
+              }
 
-            else
-                MessageBox.Show("No se pudo actualizar el registro!");*/
+              else
+                  MessageBox.Show("No se pudo actualizar el registro!");
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Confirme", "Esta seguro que desea eliminar este registro?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dr == DialogResult.No)
+            {
+                return;
+            }
+            int x = ProyectoMaterias.MateriasDAO.eliminar(this.txtCodigo.Text);
+            if (x > 0)
+            {
+                this.encerar();
+                this.cargarComboEstudiantes();
+                MessageBox.Show("¡No se pudo borrar el registro!");
+            }
+        }
+        private void encerar()
+        {
+            this.txtCodigo.Text = "";
+            this.txtNombre.Text = "";
+            this.cmbNivel.Text = "0";
+            this.cmbCarrera.Text = "";
+           
+
+        }
     }
-    }
+}

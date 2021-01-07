@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtListado = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.linkActualizar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.linkEliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtListado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,10 +49,14 @@
             // dtListado
             // 
             this.dtListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.linkActualizar,
+            this.linkEliminar});
             this.dtListado.Location = new System.Drawing.Point(89, 141);
             this.dtListado.Name = "dtListado";
             this.dtListado.Size = new System.Drawing.Size(439, 163);
             this.dtListado.TabIndex = 1;
+            this.dtListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtListado_CellContentClick);
             // 
             // button1
             // 
@@ -62,6 +68,20 @@
             this.button1.Text = "VISUALIZAR";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // linkActualizar
+            // 
+            this.linkActualizar.HeaderText = "Accion";
+            this.linkActualizar.Name = "linkActualizar";
+            this.linkActualizar.Text = "Actualizar";
+            this.linkActualizar.UseColumnTextForLinkValue = true;
+            // 
+            // linkEliminar
+            // 
+            this.linkEliminar.HeaderText = "Accion";
+            this.linkEliminar.Name = "linkEliminar";
+            this.linkEliminar.Text = "Eliminar";
+            this.linkEliminar.UseColumnTextForLinkValue = true;
             // 
             // frmMostrarMaterias
             // 
@@ -84,5 +104,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dtListado;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewLinkColumn linkActualizar;
+        private System.Windows.Forms.DataGridViewLinkColumn linkEliminar;
     }
 }

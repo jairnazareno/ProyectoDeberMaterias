@@ -113,12 +113,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 58);
+            this.label1.Location = new System.Drawing.Point(160, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(206, 13);
             this.label1.TabIndex = 38;
-            this.label1.Text = "Seleccione la materia";
+            this.label1.Text = "SELECCIONE SU CODIGO DE MATERIA";
             // 
             // txtNombre
             // 
@@ -178,16 +178,16 @@
             // 
             this.cmbCodigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cmbCodigo.FormattingEnabled = true;
-            this.cmbCodigo.Location = new System.Drawing.Point(192, 55);
+            this.cmbCodigo.Location = new System.Drawing.Point(201, 67);
             this.cmbCodigo.Name = "cmbCodigo";
             this.cmbCodigo.Size = new System.Drawing.Size(121, 21);
             this.cmbCodigo.TabIndex = 53;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(354, 327);
+            this.btnCerrar.Location = new System.Drawing.Point(344, 324);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.btnCerrar.Size = new System.Drawing.Size(83, 29);
             this.btnCerrar.TabIndex = 54;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;

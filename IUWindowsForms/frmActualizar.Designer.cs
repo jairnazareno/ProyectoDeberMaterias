@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmActualizar));
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.cmbCarrera = new System.Windows.Forms.ComboBox();
             this.cmbNivel = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -40,31 +38,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButtonCerrar = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButtonGuardar = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonCerrar = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Location = new System.Drawing.Point(152, 335);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 22;
-            this.btnCerrar.Text = "CERRAR";
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(43, 335);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 21;
-            this.btnAgregar.Text = "AGREGAR";
-            this.btnAgregar.UseVisualStyleBackColor = true;
             // 
             // cmbCarrera
             // 
@@ -170,6 +150,23 @@
             this.toolStrip1.TabIndex = 23;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripButtonGuardar
+            // 
+            this.toolStripButtonGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonGuardar.Image")));
+            this.toolStripButtonGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonGuardar.Name = "toolStripButtonGuardar";
+            this.toolStripButtonGuardar.Size = new System.Drawing.Size(16, 22);
+            this.toolStripButtonGuardar.Text = "Gaurdar";
+            this.toolStripButtonGuardar.Click += new System.EventHandler(this.toolStripButtonGuardar_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(49, 22);
+            this.toolStripLabel1.Text = "Guardar";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -185,36 +182,20 @@
             this.toolStripButtonCerrar.Text = "cerrar";
             this.toolStripButtonCerrar.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // toolStripButtonGuardar
-            // 
-            this.toolStripButtonGuardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonGuardar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonGuardar.Image")));
-            this.toolStripButtonGuardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonGuardar.Name = "toolStripButtonGuardar";
-            this.toolStripButtonGuardar.Size = new System.Drawing.Size(16, 22);
-            this.toolStripButtonGuardar.Text = "Gaurdar";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(49, 22);
-            this.toolStripLabel1.Text = "Guardar";
-            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
-            // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(39, 22);
             this.toolStripLabel2.Text = "Cerrar";
+            this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
             // frmActualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 450);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(517, 319);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.cmbCarrera);
             this.Controls.Add(this.cmbNivel);
             this.Controls.Add(this.txtNombre);
@@ -237,9 +218,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.ComboBox cmbCarrera;
         private System.Windows.Forms.ComboBox cmbNivel;
         private System.Windows.Forms.TextBox txtNombre;

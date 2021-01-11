@@ -30,9 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dtListado = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.linkActualizar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.linkEliminar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtListado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,22 +53,11 @@
             this.dtListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.linkActualizar,
             this.linkEliminar});
-            this.dtListado.Location = new System.Drawing.Point(89, 141);
+            this.dtListado.Location = new System.Drawing.Point(22, 138);
             this.dtListado.Name = "dtListado";
-            this.dtListado.Size = new System.Drawing.Size(439, 163);
+            this.dtListado.Size = new System.Drawing.Size(583, 196);
             this.dtListado.TabIndex = 1;
             this.dtListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtListado_CellContentClick);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(270, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "VISUALIZAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // linkActualizar
             // 
@@ -83,11 +73,34 @@
             this.linkEliminar.Text = "Eliminar";
             this.linkEliminar.UseColumnTextForLinkValue = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(147, 93);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(125, 30);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "VISUALIZAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(294, 93);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(103, 30);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
             // frmMostrarMaterias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 363);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtListado);
             this.Controls.Add(this.label1);
@@ -106,5 +119,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewLinkColumn linkActualizar;
         private System.Windows.Forms.DataGridViewLinkColumn linkEliminar;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

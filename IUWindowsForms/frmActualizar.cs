@@ -24,7 +24,7 @@ namespace IUWindowsForms
             //MessageBox.Show("El codigo es :" + this.mCodMateria);
             this.txtCodigo.Text = mCodMateria;
             ProyectoMaterias.Materias p = new ProyectoMaterias.Materias();
-            
+
             p = ProyectoMaterias.MateriasDAO.GetPersona(mCodMateria);
 
             //cargar datos en los cuadros de texto
@@ -41,7 +41,18 @@ namespace IUWindowsForms
 
         private void toolStripLabel1_Click(object sender, EventArgs e)
         {
-            if(this.mCodMateria.Length>0)
+
+
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButtonGuardar_Click(object sender, EventArgs e)
+        {
+            if (this.mCodMateria.Length > 0)
 
             {
                 ProyectoMaterias.Materias persona = new ProyectoMaterias.Materias();
@@ -56,7 +67,7 @@ namespace IUWindowsForms
 
                 if (x > 0)
                 {
-                 
+
                     MessageBox.Show("Registro Aactualizar con exito!");
                 }
 

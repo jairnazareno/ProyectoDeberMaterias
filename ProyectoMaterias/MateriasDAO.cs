@@ -14,7 +14,7 @@ namespace ProyectoMaterias
         public static string cadenaConexion = @"Server=DESKTOP-BVI966H\SQLEXPRESS; database=Materias; integrated security=true";
         public static int crear(Materias mate)
         {
-            //string cadenaConexion = @"Server=DESKTOP-BVI966H\SQLEXPRESS; database=Materias; integrated security=true";
+            
 
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
@@ -43,7 +43,7 @@ namespace ProyectoMaterias
 
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
-            string sql = "update Estudiantes set  nombreMateria=@nombreMateria, nivel=@nivel, @carrera=@carrera "
+            string sql = "update Estudiantes set  nombreMateria=@nombreMateria, nivel=@nivel, carrera=@carrera "
                 + " where codMaterias=@codMaterias";
 
 
@@ -95,7 +95,7 @@ namespace ProyectoMaterias
             
             SqlConnection conexion = new SqlConnection(cadenaConexion);
 
-            string sql = "select codMaterias, upper(nombreMateria), nivel, carrera " + "from Estudiantes order by carrera";
+            string sql = "select codMaterias, nombreMateria, nivel, carrera " + "from Estudiantes order by codMaterias";
             
             SqlDataAdapter ad = new SqlDataAdapter(sql, conexion);
 

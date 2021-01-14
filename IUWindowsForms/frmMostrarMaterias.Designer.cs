@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dtListado = new System.Windows.Forms.DataGridView();
-            this.linkActualizar = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.linkEliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.linkEliminar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.linkActualizar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.dtListado = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dtListado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,32 +46,6 @@
             this.label1.Size = new System.Drawing.Size(421, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "LISTADO DE MATERIAS INGRESADAS";
-            // 
-            // dtListado
-            // 
-            this.dtListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.linkActualizar,
-            this.linkEliminar});
-            this.dtListado.Location = new System.Drawing.Point(22, 138);
-            this.dtListado.Name = "dtListado";
-            this.dtListado.Size = new System.Drawing.Size(583, 196);
-            this.dtListado.TabIndex = 1;
-            this.dtListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtListado_CellContentClick);
-            // 
-            // linkActualizar
-            // 
-            this.linkActualizar.HeaderText = "Accion";
-            this.linkActualizar.Name = "linkActualizar";
-            this.linkActualizar.Text = "Actualizar";
-            this.linkActualizar.UseColumnTextForLinkValue = true;
-            // 
-            // linkEliminar
-            // 
-            this.linkEliminar.HeaderText = "Accion";
-            this.linkEliminar.Name = "linkEliminar";
-            this.linkEliminar.Text = "Eliminar";
-            this.linkEliminar.UseColumnTextForLinkValue = true;
             // 
             // button1
             // 
@@ -95,6 +69,33 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // linkEliminar
+            // 
+            this.linkEliminar.HeaderText = "Accion";
+            this.linkEliminar.Name = "linkEliminar";
+            this.linkEliminar.Text = "Eliminar";
+            this.linkEliminar.UseColumnTextForLinkValue = true;
+            // 
+            // linkActualizar
+            // 
+            this.linkActualizar.HeaderText = "Accion";
+            this.linkActualizar.Name = "linkActualizar";
+            this.linkActualizar.Text = "Actualizar";
+            this.linkActualizar.UseColumnTextForLinkValue = true;
+            // 
+            // dtListado
+            // 
+            this.dtListado.AllowUserToOrderColumns = true;
+            this.dtListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.linkActualizar,
+            this.linkEliminar});
+            this.dtListado.Location = new System.Drawing.Point(22, 138);
+            this.dtListado.Name = "dtListado";
+            this.dtListado.Size = new System.Drawing.Size(583, 196);
+            this.dtListado.TabIndex = 1;
+            this.dtListado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtListado_CellContentClick);
+            // 
             // frmMostrarMaterias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,6 +107,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmMostrarMaterias";
             this.Text = "Mostrar Materias";
+            this.Load += new System.EventHandler(this.frmMostrarMaterias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtListado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -115,10 +117,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dtListado;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewLinkColumn linkActualizar;
-        private System.Windows.Forms.DataGridViewLinkColumn linkEliminar;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.DataGridViewLinkColumn linkEliminar;
+        private System.Windows.Forms.DataGridViewLinkColumn linkActualizar;
+        private System.Windows.Forms.DataGridView dtListado;
     }
 }

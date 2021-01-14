@@ -68,11 +68,12 @@ namespace IUWindowsForms
                 if (x > 0)
                 {
 
-                    MessageBox.Show("Registro Aactualizar con exito!");
+                    MessageBox.Show("Registro Actualizado con exito!");
                 }
 
                 else
                     MessageBox.Show("No se pudo actualizar el registro!");
+               
             }
         }
     }

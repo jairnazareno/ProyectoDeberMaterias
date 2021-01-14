@@ -20,6 +20,7 @@ namespace IUWindowsForms
         private void button1_Click(object sender, EventArgs e)
         {
             this.cargarGrid();
+            
         }
 
         private void cargarGrid()
@@ -27,18 +28,18 @@ namespace IUWindowsForms
             this.dtListado.DataSource = ProyectoMaterias.MateriasDAO.getAll();
 
         }
-        private void dtListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void dtListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (this.dtListado.Columns[e.ColumnIndex].Name=="linkEliminar")
             {
-                //MessageBox.Show("clic eliminar");
+             
                 int fila = e.RowIndex;
                 String codMaterias = dtListado["codMaterias", fila].Value.ToString();
-                String Column1 = dtListado["Column1", fila].Value.ToString();
+                String nombreMateria = dtListado["nombreMateria", fila].Value.ToString();
 
                 
 
-                DialogResult dr = MessageBox.Show("ESTAS SEGURO DE ELIMINAR AL ESTDUDIANTE, "+ Column1 + " ?", "CONFIRME", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                DialogResult dr = MessageBox.Show("ESTAS SEGURO DE ELIMINAR LA MATERIA, "+ nombreMateria + " ?", "CONFIRME", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
                 if(dr==DialogResult.No)
                 {
                     return;
@@ -60,14 +61,19 @@ namespace IUWindowsForms
                 //MessageBox.Show("clic actualizar");
                 frmActualizar frm1 = new frmActualizar(codMaterias);
                 frm1.ShowDialog();
-
+                cargarGrid();
             }
 
         }
-
+      
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmMostrarMaterias_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
